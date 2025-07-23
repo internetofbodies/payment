@@ -5,82 +5,323 @@
   padding: 0;
 }
 
+/* Base */
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #f2f6fc, #dbe8ff);
+  background-color: #121a32;
+  color: #f0e6d2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 32px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Navbar */
+header {
+  width: 100%;
+  padding: 16px 32px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+}
+
+.header-title-logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 16px;
+  position: relative;
 }
 
-/* Card Container */
-.card {
-  background: #ffffff;
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  text-align: center;
-  max-width: 384px;
-  width: 100%;
+.header-title-logo img {
+  width: 50px;
+  height: 50px;
 }
 
-/* Typography */
-.card h1 {
-  font-size: 26px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: #222;
-}
-
-.card p {
+.header-title-logo::before {
+  content: "Accountable Infrastructure";
   font-size: 16px;
-  margin-bottom: 32px;
-  color: #555;
+  font-weight: 600;
+  top: 10px;
+  color: #ffffff;
+  position: absolute;
+  left: 60px;
+  white-space: nowrap;
+}
+
+.header-title-logo::after {
+  content: "Private Enterprise & Government Services";
+  font-size: 13px;
+  font-weight: 400;
+  top: 30px;
+  color: #9ca3af;
+  position: absolute;
+  left: 60px;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* Even spacing between links */
+}
+
+nav a {
+  color: #e6e6fa;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap; /* <== This keeps text in a single line */
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content */
+main {
+  text-align: center;
+  margin-top: 80px;
+  max-width: 600px;
+  padding: 0 16px;
+}
+
+main h1 {
+  font-size: 63px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #e3c98b;
+}
+
+main p {
+  font-size: 15px;
+  color: #dcdceb;
   line-height: 1.6;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 32px;
 }
 
 /* Button */
 .button {
   display: inline-block;
-  padding: 12px 32px;
+  padding: 16px 64px;
   font-size: 16px;
   font-weight: 600;
-  background-color: #4b5bdc;
-  color: white;
+  background-color: #e3c98b;
+  color: #121a32;
   border-radius: 24px;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(75, 91, 220, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 128px;
 }
 
 .button:hover {
-  background-color: #3c4abc;
+  background-color: #cfb677;
   transform: scale(1.04);
 }
 
-/* Mobile Tweaks */
-@media (max-width: 480px) {
-  .card {
-    padding: 24px;
-    max-width: 90%;
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 128px;
+}
+.footer {
+  width: 100%;
+  padding: 16px 32px;
+}
+
+/* Make sure this is below .footer-container to override spacing if needed */
+.footer-title-logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.footer-title-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Simulate ::before and ::after from header */
+.footer-title-logo::before {
+  content: "Accountable Infrastructure";
+  font-size: 16px;
+  font-weight: 600;
+  top: 10px;
+  color: #ffffff;
+  position: absolute;
+  left: 60px;
+  white-space: nowrap;
+}
+.footer-title-logo::after {
+  content: "Private Enterprise & Government Services";
+  font-size: 13px;
+  font-weight: 400;
+  top: 30px;
+  color: #9ca3af;
+  position: absolute;
+  left: 60px;
+  white-space: nowrap;
+}
+.footer-bottom {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin-top: 16px;
+}
+
+.footer-right a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  /* Base */
+  body {
+    padding: 16px;
   }
 
-  .card h1 {
-    font-size: 20px;
+  /* Navbar */
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 
-  .card p {
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  .header-title-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-title-logo::before {
     font-size: 14px;
+    top: 0;
+    left: 50px;
+  }
+
+  .header-title-logo::after {
+    font-size: 12px;
+    top: 18px;
+    left: 50px;
+  }
+
+  /* Main Content */
+  main h1 {
+    font-size: 40px;
   }
 
   .button {
-    font-size: 14px;
-    padding: 10px 24px;
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    margin-top: 64px;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 24px;
+  }
+
+  .footer-title-logo {
+    margin-bottom: 8px;
+  }
+
+  .footer-bottom {
+    margin-left: 60px; /* Aligns it with the start of "Accountable Infrastructure" */
+  }
+
+  .footer-right {
+    align-self: flex-start;
+  }
+
+  .footer-right a {
+    font-size: 16px;
+  }
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.footer-bottom {
+  margin-left: 0; /* remove the 60px that was causing misalignment */
+}
+
+/* Hamburger styles */
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hamburger {
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsive navigation */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    margin-left: 0;
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .nav-container {
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
   }
 }
