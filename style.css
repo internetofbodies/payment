@@ -19,6 +19,8 @@ body {
 
 html,
 body {
+  margin: 0;
+  padding: 0;
   height: 100%;
 }
 
@@ -92,7 +94,7 @@ nav a:hover {
 /* Main Content */
 main {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 128px;
   max-width: 600px;
   padding: 0 16px;
 }
@@ -102,6 +104,7 @@ main h1 {
   font-weight: 600;
   margin-bottom: 24px;
   color: #e3c98b;
+  margin-top: 32px;
 }
 
 main p {
@@ -142,6 +145,7 @@ main p {
 .footer {
   width: 100%;
   padding: 16px 32px;
+  margin-top: auto;
 }
 
 /* Make sure this is below .footer-container to override spacing if needed */
