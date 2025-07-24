@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment - Accountable Infrastructure</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome CDN (v6.5.0) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <!-- Favicon -->
     <link rel="icon" href="logo.png" type="image/png" />
@@ -16,9 +21,23 @@
           <div class="header-title-logo">
             <img src="logo.png" alt="Logo" />
           </div>
-          <div class="hamburger" id="hamburger">&#9776;</div>
+
+          <!-- Add aria attrs -->
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open menu"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
-        <nav id="nav-menu">
+
+        <nav id="nav-menu" aria-hidden="true">
+          <button class="close-btn" id="closeBtn" aria-label="Close menu">
+            &times;
+          </button>
           <a href="https://accountableinfrastructure.com/">Home</a>
           <a href="https://accountableinfrastructure.com/portal"
             >Partner Portal</a
@@ -39,7 +58,7 @@
         href="https://buy.stripe.com/test_9B6cN60q03Va9OIgxccwg00"
         target="_blank"
       >
-        <i class="fas fa-lock"></i> Pay Now
+        Pay Now <i class="fas fa-lock"></i>
       </a>
     </main>
     <footer class="footer">
@@ -60,10 +79,21 @@
     <script>
       const hamburger = document.getElementById("hamburger");
       const navMenu = document.getElementById("nav-menu");
+      const closeBtn = document.getElementById("closeBtn");
+      const links = navMenu.querySelectorAll("a");
 
-      hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-      });
+      function setNav(open) {
+        navMenu.classList.toggle("show", open);
+        document.body.classList.toggle("no-scroll", open);
+        hamburger.setAttribute("aria-expanded", String(open));
+        navMenu.setAttribute("aria-hidden", String(!open));
+      }
+
+      hamburger.addEventListener("click", () => setNav(true));
+      closeBtn.addEventListener("click", () => setNav(false));
+      links.forEach((link) =>
+        link.addEventListener("click", () => setNav(false))
+      );
     </script>
   </body>
 </html>
