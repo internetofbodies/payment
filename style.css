@@ -8,7 +8,7 @@
 /* Base */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #121a32;
+  background-color: #192438;
   color: #f0e6d2;
   display: flex;
   flex-direction: column;
@@ -117,7 +117,7 @@ main p {
 /* Button */
 .button {
   display: inline-block;
-  padding: 16px 64px;
+  padding: 16px 80px;
   font-size: 16px;
   font-weight: 600;
   background-color: #e3c98b;
@@ -245,7 +245,7 @@ main p {
   }
 
   .button {
-    width: 100%;
+    width: 72%;
     padding: 16px;
     font-size: 16px;
     margin-top: 64px;
@@ -294,38 +294,105 @@ main p {
   width: 100%;
 }
 
+/* ===== Base Styles ===== */
 .hamburger {
-  font-size: 24px;
-  color: #ffffff;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 28px; /* Size of the icon */
+  color: white; /* Adjust based on your navbar background */
   cursor: pointer;
+  display: none; /* hide by default (shown in mobile via media query) */
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger i {
+  pointer-events: none;
+}
+
+/* Close button hidden by default */
+.close-btn {
   display: none;
 }
 
-/* Responsive navigation */
+/* Pay Now button icon spacing */
+.button i {
+  margin-left: 8px;
+}
+
+/* ===== Desktop Navigation ===== */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  nav {
+    display: flex !important;
+    gap: 32px;
+  }
+
+  nav a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* ===== Mobile Styles ===== */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
 
   nav {
+    position: fixed;
+    inset: 0; /* shorthand for top, right, bottom, left = 0 */
+    background: #ffffff;
     display: none;
     flex-direction: column;
-    margin-top: 16px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
   }
 
   nav.show {
     display: flex;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   nav a {
-    margin-left: 0;
-    font-size: 16px;
-    padding: 8px 16px;
+    margin: 12px 0;
+    font-size: 24px;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .close-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 32px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    line-height: 1;
+    color: #000000;
   }
 
   .nav-container {
     align-items: flex-start;
     gap: 12px;
     flex-direction: column;
+  }
+
+  body.no-scroll {
+    overflow: hidden;
   }
 }
