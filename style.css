@@ -9,6 +9,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: #192438;
+  /*background: url('hero1.png') no-repeat center center fixed;*/
   color: #f0e6d2;
   display: flex;
   flex-direction: column;
@@ -394,5 +395,99 @@ main p {
 
   body.no-scroll {
     overflow: hidden;
+  }
+}
+
+/* === Payment Section with Hero Image === */
+.payment-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 128px auto 64px;
+  padding: 0 32px;
+  flex-wrap: wrap;
+}
+
+.payment-left {
+  flex: 1 1 400px;
+  text-align: left;
+}
+
+.payment-left h1 {
+  font-size: 56px;
+  color: #e3c98b;
+  margin-bottom: 24px;
+}
+
+.payment-left p {
+  font-size: 16px;
+  color: #dcdceb;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.payment-right {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.overlay-image {
+  position: absolute;
+  bottom: -48px;
+  right: -120px;
+  width: 60%;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  .payment-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+    padding: 0 16px;
+  }
+
+  .payment-left {
+    text-align: center;
+  }
+
+  .payment-left h1 {
+    font-size: 40px;
+  }
+
+  .payment-right {
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .hero-image {
+    max-width: 260px;
+  }
+
+  .overlay-image {
+    bottom: -12px;
+    right: -12px;
+    width: 55%;
   }
 }
