@@ -424,7 +424,7 @@ main p {
 }
 
 .payment-left {
-  flex: 1 1 400px;                                                                                                                       
+  flex: 1 1 400px;
   text-align: left;
 }
 
@@ -477,7 +477,7 @@ main p {
   .payment-section {
     flex-direction: column;
     text-align: center;
-    gap: 32px;
+    gap: 8px;
     padding: 0 16px;
     margin-bottom: 0;
   }
@@ -492,7 +492,7 @@ main p {
 
   .payment-right {
     justify-content: center;
-    margin-top: 32px;
+    margin-top: 8px;
   }
 
   .hero-image {
