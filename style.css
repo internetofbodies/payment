@@ -506,3 +506,38 @@ main p {
     width: 55%;
   }
 }
+
+@media (max-width: 430px) {
+  /* iPhone 14 Pro Max-specific fixes */
+  .payment-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    padding: 0 16px;
+    margin-bottom: 0;
+  }
+
+  .payment-left {
+    text-align: center;
+  }
+
+  .payment-left h1 {
+    font-size: 40px;
+  }
+
+  .payment-right {
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .hero-image {
+    max-width: 260px;
+    margin-left: 0;
+  }
+
+  .overlay-image {
+    bottom: -12px;
+    right: -12px;
+    width: 55%;
+  }
+}
