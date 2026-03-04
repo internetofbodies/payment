@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -59,11 +59,30 @@
           encrypted and protected.
         </p>
         <a
-          class="button"
-          href="https://buy.stripe.com/test_14A4grfVgb3S2LL8VT9sk00"
+          class="button-alt stripe"
+          href="https://buy.stripe.com/test_3cI00b10mfk85XXfkh9sk01"
           target="_blank"
         >
-          Pay Now <i class="bi bi-lock-fill"></i>
+          <i class="bi bi-credit-card-fill"></i> Pay via Stripe
+        </a>
+
+        <a class="button-alt bank" href="#">
+          <i class="bi bi-bank2"></i> Pay via Bank Transfer
+        </a>
+
+        <a
+          class="button-alt paypal"
+          href="https://paypal.me/accountableinfrastructure"
+          target="_blank"
+        >
+          <i class="fab fa-paypal"></i> Pay via PayPal
+        </a>
+
+        <a
+          class="button-alt zelle"
+          href="mailto:admin@accountableinfrastructure.com?subject=Zelle Payment"
+        >
+          <i class="bi bi-lightning-fill"></i> Pay via Zelle
         </a>
       </div>
 
@@ -86,6 +105,8 @@
           </div>
         </div>
         <div class="footer-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
           <a href="https://accountableinfrastructure.com/contact">Contact</a>
         </div>
       </div>
@@ -106,7 +127,7 @@
       hamburger.addEventListener("click", () => setNav(true));
       closeBtn.addEventListener("click", () => setNav(false));
       links.forEach((link) =>
-        link.addEventListener("click", () => setNav(false))
+        link.addEventListener("click", () => setNav(false)),
       );
     </script>
   </body>
