@@ -192,6 +192,229 @@ main p {
   color: #e3c98b;
 }
 
+/* ── Page layout ── */
+.bank-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 680px;
+  margin: 64px auto 80px;
+  padding: 0 24px;
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Card ── */
+.bank-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px 40px 36px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* ── Header ── */
+.bank-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.bank-header-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(227, 201, 139, 0.12);
+  border: 1px solid rgba(227, 201, 139, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #e3c98b;
+  flex-shrink: 0;
+}
+
+.bank-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #e3c98b;
+  line-height: 1.2;
+}
+
+.bank-header p {
+  font-size: 13px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* ── Divider ── */
+.bank-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 28px 0;
+}
+
+/* ── Fields ── */
+.bank-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.bank-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px 18px;
+  transition: border-color 0.2s;
+}
+
+.bank-field:hover {
+  border-color: rgba(227, 201, 139, 0.25);
+}
+
+.bank-field-left label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.bank-field-left span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #f0e6d2;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  color: #e3c98b;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition:
+    background 0.2s,
+    opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  background: rgba(227, 201, 139, 0.1);
+}
+
+/* ── Note box ── */
+.bank-note {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: rgba(227, 201, 139, 0.06);
+  border: 1px solid rgba(227, 201, 139, 0.18);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 28px;
+}
+
+.bank-note i {
+  color: #e3c98b;
+  font-size: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.bank-note p {
+  font-size: 13px;
+  color: #dcdceb;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.bank-note p a {
+  color: #e3c98b;
+  text-decoration: underline;
+}
+
+/* ── Back button ── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: #f0e6d2;
+}
+
+/* ── Toast ── */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #1e2d45;
+  border: 1px solid rgba(227, 201, 139, 0.3);
+  color: #e3c98b;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  white-space: nowrap;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .bank-section {
+    margin: 32px auto 60px;
+    padding: 0 16px;
+  }
+
+  .bank-card {
+    padding: 28px 22px 28px;
+  }
+
+  .bank-header h1 {
+    font-size: 18px;
+  }
+}
+
 .footer-container {
   max-width: 1200px;
   margin: auto;
