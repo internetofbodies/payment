@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PayPal Payment - Accountable Infrastructure Inc</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="logo.png" type="image/png" />
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="nav-header">
+          <div class="header-title-logo">
+            <img src="logo.png" alt="Logo" />
+          </div>
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Open menu"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <nav id="nav-menu" aria-hidden="true">
+          <button class="close-btn" id="closeBtn" aria-label="Close menu">
+            &times;
+          </button>
+          <a href="https://accountableinfrastructure.com/">Home</a>
+          <a href="https://accountableinfrastructure.com/portal"
+            >Partner Portal</a
+          >
+          <a href="https://accountableinfrastructure.com/contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="pp-section">
+      <div class="pp-card">
+        <!-- Logo -->
+        <div class="pp-logo-area">
+          <div class="pp-logo">
+            <i class="fab fa-paypal"></i>
+            <span class="pp-pay">Pay</span><span class="pp-pal">Pal</span>
+          </div>
+          <h2>Send Payment to Accountable Infrastructure Inc</h2>
+          <p>Use the details below to complete your PayPal payment</p>
+        </div>
+
+        <div class="pp-divider"></div>
+
+        <!-- Email -->
+        <div class="pp-email-label">PayPal Email Address</div>
+        <div class="pp-email-box">
+          <span id="f-email"
+            ><a data-cfemail="admin@accountableinfrastructure.com"
+              >admin@accountableinfrastructure.com</a
+            ></span
+          >
+          <button
+            class="pp-copy-btn"
+            onclick="copyField('f-email')"
+            title="Copy email"
+          >
+            <i class="bi bi-clipboard"></i>
+          </button>
+        </div>
+
+        <!-- Steps -->
+        <div class="pp-steps-label">How to send payment</div>
+        <div class="pp-steps">
+          <div class="pp-step">
+            <div class="pp-step-num">1</div>
+            <p>
+              Log in to your account at <strong>paypal.com</strong> or open the
+              PayPal app.
+            </p>
+          </div>
+          <div class="pp-step">
+            <div class="pp-step-num">2</div>
+            <p>
+              Click <strong>"Send & Request"</strong> then tap
+              <strong>"Send Money."</strong>
+            </p>
+          </div>
+          <div class="pp-step">
+            <div class="pp-step-num">3</div>
+            <p>
+              Enter
+              <strong
+                ><a data-cfemail="admin@accountableinfrastructure.com"
+                  >admin@accountableinfrastructure.com</a
+                ></strong
+              >
+              as the recipient.
+            </p>
+            <button
+              class="pp-copy-btn"
+              onclick="copyField('f-email')"
+              title="Copy email"
+            >
+              <i class="bi bi-clipboard"></i>
+            </button>
+          </div>
+          <div class="pp-step">
+            <div class="pp-step-num">4</div>
+            <p>
+              Enter your payment amount and select
+              <strong>"Paying for Goods and Services."</strong>
+            </p>
+          </div>
+          <div class="pp-step">
+            <div class="pp-step-num">5</div>
+            <p>
+              Add your <strong>Order ID or email</strong> in the note field as a
+              reference.
+            </p>
+          </div>
+          <div class="pp-step">
+            <div class="pp-step-num">6</div>
+            <p>
+              Review and click <strong>"Send Payment Now"</strong> to complete.
+            </p>
+          </div>
+        </div>
+
+        <!-- Note -->
+        <div class="pp-note">
+          <i class="bi bi-envelope-fill"></i>
+          <p>
+            After payment, please email your confirmation receipt to&nbsp;
+            <a href="mailto:admin@accountableinfrastructure.com">
+              <span>admin@accountableinfrastructure.com</span>
+            </a>
+            so we can verify and process your order promptly.
+          </p>
+        </div>
+
+        <!-- Back -->
+        <a href="index.html" class="back-link">
+          <i class="bi bi-arrow-left"></i> Back to Payment Options
+        </a>
+      </div>
+    </section>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Copied to clipboard</div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <div class="footer-title-logo">
+            <img src="logo.png" alt="Logo" />
+          </div>
+          <div class="footer-bottom">
+            © 2025 Accountable Infrastructure Inc. All Rights Reserved.
+          </div>
+        </div>
+        <div class="footer-right">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="https://accountableinfrastructure.com/contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script>
+      /* Nav */
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+      const closeBtn = document.getElementById("closeBtn");
+      navMenu
+        .querySelectorAll("a")
+        .forEach((l) => l.addEventListener("click", () => setNav(false)));
+      function setNav(open) {
+        navMenu.classList.toggle("show", open);
+        document.body.classList.toggle("no-scroll", open);
+        hamburger.setAttribute("aria-expanded", String(open));
+        navMenu.setAttribute("aria-hidden", String(!open));
+      }
+      hamburger.addEventListener("click", () => setNav(true));
+      closeBtn.addEventListener("click", () => setNav(false));
+
+      /* Copy + toast */
+      let toastTimer;
+      function copyField(id) {
+        const element = document.getElementById(id);
+        const text = element.textContent || element.innerText;
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            showToast();
+          })
+          .catch((err) => {
+            console.error("Failed to copy: ", err);
+          });
+      }
+
+      function showToast() {
+        const toast = document.getElementById("toast");
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.classList.remove("show");
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
