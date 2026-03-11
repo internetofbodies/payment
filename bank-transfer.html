@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payment - Accountable Infrastructure</title>
+    <title>Bank Transfer - Accountable Infrastructure</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Font Awesome CDN (v6.5.0) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -14,9 +13,9 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-
-    <!-- Favicon -->
     <link rel="icon" href="logo.png" type="image/png" />
+
+    <style></style>
   </head>
   <body>
     <header>
@@ -25,8 +24,6 @@
           <div class="header-title-logo">
             <img src="logo.png" alt="Logo" />
           </div>
-
-          <!-- Add aria attrs -->
           <button
             class="hamburger"
             id="hamburger"
@@ -37,7 +34,6 @@
             <i class="fas fa-bars"></i>
           </button>
         </div>
-
         <nav id="nav-menu" aria-hidden="true">
           <button class="close-btn" id="closeBtn" aria-label="Close menu">
             &times;
@@ -58,17 +54,22 @@
           <div class="bank-header-icon">
             <i class="bi bi-bank2"></i>
           </div>
-          <div>
+          <div class="bank-header-text">
             <h1>Bank Transfer Payment</h1>
             <p>Please send your payment using the following details</p>
           </div>
         </div>
 
+        <div class="bank-divider"></div>
+
+        <div class="fields-label">Account Details</div>
+
+        <!-- Fields -->
         <div class="bank-fields">
           <div class="bank-field">
             <div class="bank-field-left">
               <label>Account Number</label>
-              <span id="f-account">325177850499</span>
+              <span id="f-account" class="number">325177850499</span>
             </div>
             <button
               class="copy-btn"
@@ -82,7 +83,7 @@
           <div class="bank-field">
             <div class="bank-field-left">
               <label>Routing Number</label>
-              <span id="f-routing">026009593</span>
+              <span id="f-routing" class="number">026009593</span>
             </div>
             <button
               class="copy-btn"
@@ -146,7 +147,7 @@
           <div class="bank-field">
             <div class="bank-field-left">
               <label>Additional Info</label>
-              <span id="f-info">Business Account or Checking Account </span>
+              <span id="f-info">Business Account or Checking Account</span>
             </div>
             <button class="copy-btn" onclick="copyField('f-info')" title="Copy">
               <i class="bi bi-clipboard"></i>
@@ -198,7 +199,6 @@
     </footer>
 
     <script>
-      /* Nav */
       const hamburger = document.getElementById("hamburger");
       const navMenu = document.getElementById("nav-menu");
       const closeBtn = document.getElementById("closeBtn");
@@ -214,7 +214,6 @@
       hamburger.addEventListener("click", () => setNav(true));
       closeBtn.addEventListener("click", () => setNav(false));
 
-      /* Copy + toast */
       let toastTimer;
       function copyField(id) {
         const text = document.getElementById(id).textContent.trim();
@@ -224,7 +223,6 @@
           );
           icon.className = "bi bi-check2";
           setTimeout(() => (icon.className = "bi bi-clipboard"), 1800);
-
           const toast = document.getElementById("toast");
           toast.classList.add("show");
           clearTimeout(toastTimer);
